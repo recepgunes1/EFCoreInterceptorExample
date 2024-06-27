@@ -1,0 +1,72 @@
+@EFCoreInterceptorExample_HostAddress = http://localhost:8080
+
+GET {{EFCoreInterceptorExample_HostAddress}}/init_db
+Accept: application/json
+
+###
+
+GET {{EFCoreInterceptorExample_HostAddress}}/user/
+Accept: application/json
+
+###
+
+POST {{EFCoreInterceptorExample_HostAddress}}/user/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "Name": "John Dalton",
+    "Email": "john@dalton.com.tr"
+}
+###
+
+PUT {{EFCoreInterceptorExample_HostAddress}}/user/589e8583-d920-438a-9a0a-8430d279d4e3
+Accept: application/json
+Content-Type: application/json
+
+{
+    "Name": "Eva Nolan",
+    "Email": "eva@nolan.com"
+}
+###
+
+DELETE {{EFCoreInterceptorExample_HostAddress}}/user/589e8583-d920-438a-9a0a-8430d279d4e3
+Accept: application/json
+
+###
+
+GET {{EFCoreInterceptorExample_HostAddress}}/book/
+Accept: application/json
+
+###
+
+GET {{EFCoreInterceptorExample_HostAddress}}/book/logs/f8ec1cff-ee5b-4fe1-81cb-ea50de2e4ba6
+Accept: application/json
+
+###
+
+POST {{EFCoreInterceptorExample_HostAddress}}/book/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "Title": "The Great",
+    "Description": "Lorem Ipsum",
+    "Pages": 200
+}
+###
+
+PUT {{EFCoreInterceptorExample_HostAddress}}/book/4d81863e-1e0f-4e06-ab32-f7a987a25bc2
+Accept: application/json
+Content-Type: application/json
+
+{
+    "Title": "The Great V2",
+    "Description": "Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+    "Pages": 300
+}
+###
+
+DELETE {{EFCoreInterceptorExample_HostAddress}}/book/4d81863e-1e0f-4e06-ab32-f7a987a25bc2
+Accept: application/json
+###

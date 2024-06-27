@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  efcoreinterceptorexample:
+    image: ${DOCKER_REGISTRY-}efcoreinterceptorexample
+    build:
+      context: .
+      dockerfile: EFCoreInterceptorExample/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+    ports:
+      - "8080:8080"
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      SA_PASSWORD: "YourStrong@Passw0rd"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
